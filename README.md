@@ -9,23 +9,24 @@ A modern, premium fashion e-commerce platform inspired by Zara, H&M, and Nykaa d
 ## Features
 
 ### Customer Features
-- **Home/Landing Page** - Hero sections, promotions, featured categories
+- **Home/Landing Page** - Hero carousel, promotional sections, latest arrivals
+- **All Collections** - Complete women's and men's product collections
+- **New Arrivals** - Latest products across all categories
 - **Premium Collections** - Curated premium women's and men's collections
-- **Category Listings** - Product lists with filters and sorting
-- **Product Details** - Image galleries, variants, pricing, add-to-cart
+- **Product Details** - Image galleries, size/color variants, pricing, add-to-cart
 - **Shopping Cart** - View items, adjust quantities, remove products
 - **Checkout** - Address management, shipping options, payment integration
 - **Authentication** - Login, register, forgot password flows
-- **User Profile** - Order history, saved addresses, account management
-- **Search** - Product search with autocomplete
-- **Wishlist** - Save favorite items
-- **Order Tracking** - View order status and notifications
+- **User Profile** - Order history, saved addresses, payment methods, account management
+- **Search** - Product search functionality
+- **Wishlist** - Save favorite items for later
+- **WhatsApp Integration** - Direct customer support via WhatsApp
 
 ### Admin Features
 - Product management (CRUD operations)
-- Order management
+- Order management and tracking
 - Customer management
-- Analytics dashboard
+- Analytics dashboard with sales metrics
 
 ## How can I edit this code?
 
@@ -471,14 +472,56 @@ VITE_SUPABASE_ANON_KEY=xxxxx
 
 ```
 src/
-├── components/        # Reusable UI components
-├── pages/            # Page components
-├── contexts/         # React context providers
-├── hooks/            # Custom React hooks
-├── lib/              # Utility functions
-├── assets/           # Images and static files
-└── App.tsx           # Main app component
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn-ui components
+│   ├── Header.tsx      # Main navigation header
+│   ├── Footer.tsx      # Site footer
+│   ├── ProductCard.tsx # Product display card
+│   ├── CartDrawer.tsx  # Shopping cart sidebar
+│   └── WhatsAppButton.tsx # WhatsApp support button
+├── pages/              # Page components
+│   ├── Index.tsx       # Home page with hero & promotions
+│   ├── Women.tsx       # All women's collections
+│   ├── Men.tsx         # All men's collections
+│   ├── NewArrivals.tsx # Latest products page
+│   ├── PremiumWomen.tsx # Premium women's collection
+│   ├── PremiumMen.tsx  # Premium men's collection
+│   ├── ProductDetail.tsx # Individual product page
+│   ├── Bag.tsx         # Shopping cart page
+│   ├── Checkout.tsx    # Checkout flow
+│   ├── Login.tsx       # Login page
+│   ├── Register.tsx    # Registration page
+│   ├── MyAccount.tsx   # User account dashboard
+│   └── admin/          # Admin pages
+│       ├── Dashboard.tsx
+│       ├── Products.tsx
+│       ├── Orders.tsx
+│       └── Analytics.tsx
+├── contexts/           # React context providers
+│   └── CartContext.tsx # Shopping cart state
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── data/               # Static data
+│   └── products.ts     # Product catalog
+├── assets/             # Images and static files
+└── App.tsx             # Main app with routing
 ```
+
+## Main Routes
+
+- `/` - Home page with hero carousel and promotional sections
+- `/women` - All women's collections
+- `/men` - All men's collections
+- `/new-arrivals` - Latest products (women & men)
+- `/premium-women` - Premium women's collection
+- `/premium-men` - Premium men's collection
+- `/product/:id` - Product detail page
+- `/bag` - Shopping cart
+- `/checkout` - Checkout process
+- `/login` - User authentication
+- `/register` - User registration
+- `/my-account` - User account dashboard
+- `/admin/*` - Admin dashboard (requires authentication)
 
 ## Payment Integration
 
