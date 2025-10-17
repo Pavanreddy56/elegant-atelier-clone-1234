@@ -35,7 +35,7 @@ const Women = () => {
             <span>/</span>
             <span className="text-foreground">Women</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">All Clothes</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">All Collections</h1>
           <p className="text-muted-foreground">Explore our complete collection of women's fashion</p>
         </div>
 

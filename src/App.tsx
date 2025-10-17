@@ -5,11 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import Index from "./pages/Index";
-import Shop from "./pages/Shop";
 import Women from "./pages/Women";
 import Men from "./pages/Men";
 import NewArrivals from "./pages/NewArrivals";
-import CategoryPage from "./pages/CategoryPage";
 import PremiumWomen from "./pages/PremiumWomen";
 import PremiumMen from "./pages/PremiumMen";
 import ProductDetail from "./pages/ProductDetail";
@@ -52,12 +50,8 @@ const App = () => (
           <Route path="/premium-women" element={<PremiumWomen />} />
           <Route path="/premium-men" element={<PremiumMen />} />
           <Route path="/women" element={<Women />} />
-          <Route path="/women/:category" element={<CategoryPage />} />
           <Route path="/men" element={<Men />} />
-          <Route path="/men/:category" element={<CategoryPage />} />
           <Route path="/new-arrivals" element={<NewArrivals />} />
-          <Route path="/shop/:category" element={<Shop />} />
-          <Route path="/shop/:category/:type" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
