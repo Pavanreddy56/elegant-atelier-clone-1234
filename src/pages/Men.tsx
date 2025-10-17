@@ -20,9 +20,7 @@ const Men = () => {
     { name: "Shirts", subcategory: "shirts", url: "/men/shirts", image: product6 },
     { name: "Jeans", subcategory: "jeans", url: "/men/jeans", image: product7 },
     { name: "Suits", subcategory: "suits", url: "/men/suits", image: product9 },
-    { name: "Shoes", subcategory: "shoes", url: "/men/shoes", image: product6 },
     { name: "Accessories", subcategory: "accessories", url: "/men/accessories", image: product7 },
-    { name: "Brands", subcategory: "brands", url: "/men/brands", image: product9 },
   ];
 
   return (
@@ -36,7 +34,7 @@ const Men = () => {
             <span>/</span>
             <span className="text-foreground">Men</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">All Men</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">All Clothes</h1>
           <p className="text-muted-foreground">Explore our complete collection of men's fashion</p>
         </div>
 

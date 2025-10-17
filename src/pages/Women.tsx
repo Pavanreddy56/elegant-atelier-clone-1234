@@ -21,9 +21,7 @@ const Women = () => {
     { name: "Tops", subcategory: "tops", url: "/women/tops", image: product2 },
     { name: "Jeans", subcategory: "jeans", url: "/women/jeans", image: product3 },
     { name: "Coats & Jackets", subcategory: "coats-jackets", url: "/women/coats-jackets", image: product1 },
-    { name: "Shoes", subcategory: "shoes", url: "/women/shoes", image: product2 },
     { name: "Accessories", subcategory: "accessories", url: "/women/accessories", image: product3 },
-    { name: "Brands", subcategory: "brands", url: "/women/brands", image: product1 },
   ];
 
   return (
@@ -37,7 +35,7 @@ const Women = () => {
             <span>/</span>
             <span className="text-foreground">Women</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">All Women</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">All Clothes</h1>
           <p className="text-muted-foreground">Explore our complete collection of women's fashion</p>
         </div>
 
