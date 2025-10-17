@@ -103,7 +103,7 @@ const Index = () => {
           <div className="container">
             <div className="max-w-xl">
               <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
-                The Whispers of Charm
+                All Collections
               </h1>
               <Link to="/premium-women">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90">
@@ -158,7 +158,7 @@ const Index = () => {
           <div className="container">
             <div className="max-w-xl ml-auto text-right">
               <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
-                Make your Own Style
+                All Collections
               </h1>
               <Link to="/premium-men">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90">
