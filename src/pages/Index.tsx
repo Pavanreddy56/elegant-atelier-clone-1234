@@ -32,9 +32,9 @@ import product9Men from "@/assets/product-9-men.jpg";
 import { products } from "@/data/products";
 
 const promoSlides = [
-  { image: promoFestival, title: "Festival Collection", subtitle: "Celebrate in Style" },
-  { image: promoEvents, title: "Event Specials", subtitle: "Make Every Moment Count" },
-  { image: promoArrivals, title: "New Arrivals", subtitle: "Fresh Styles Just In" },
+  { image: promoFestival, title: "Festival Collection", subtitle: "Celebrate in Style", link: "/women" },
+  { image: promoEvents, title: "Event Specials", subtitle: "Make Every Moment Count", link: "/men" },
+  { image: promoArrivals, title: "New Arrivals", subtitle: "Fresh Styles Just In", link: "/new-arrivals" },
 ];
 
 const latestProducts = [
@@ -66,19 +66,21 @@ const Index = () => {
           <CarouselContent>
             {promoSlides.map((slide, index) => (
               <CarouselItem key={index}>
-                <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-                  <img 
-                    src={slide.image} 
-                    alt={slide.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h2 className="text-3xl md:text-5xl font-serif font-bold mb-2">{slide.title}</h2>
-                      <p className="text-lg md:text-xl font-light">{slide.subtitle}</p>
+                <Link to={slide.link}>
+                  <div className="relative h-[40vh] md:h-[50vh] overflow-hidden cursor-pointer">
+                    <img 
+                      src={slide.image} 
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <h2 className="text-3xl md:text-5xl font-serif font-bold mb-2">{slide.title}</h2>
+                        <p className="text-lg md:text-xl font-light">{slide.subtitle}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -113,7 +115,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Hero Section 2 */}
+      {/* Latest Arrivals - Women */}
+      <section className="container py-12 md:py-16">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold">LATEST ARRIVALS</h2>
+          <Link to="/women">
+            <Button variant="outline" size="sm">View All</Button>
+          </Link>
+        </div>
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex gap-4 md:gap-6 pb-4">
+            {products.filter(p => p.gender === "women").slice(0, 6).map((product) => (
+              <Link key={product.id} to={`/product/${product.id}`} className="group flex-shrink-0 w-[140px] md:w-[180px]">
+                <div className="relative overflow-hidden bg-secondary/50 aspect-[3/4] rounded-lg">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-2 space-y-1">
+                  <h3 className="font-serif text-xs md:text-sm font-medium group-hover:text-primary transition-smooth line-clamp-1">
+                    {product.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground line-clamp-1">{product.category}</p>
+                  <p className="text-sm md:text-base font-semibold">₹{product.price.toLocaleString()}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section 2 - Make your Own Style */}
       <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
         <img 
           src={hero2} 
@@ -136,33 +170,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Latest Arrivals - Horizontal Scroll */}
+      {/* Latest Arrivals - Men */}
       <section className="container py-12 md:py-16">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-serif font-bold">LATEST ARRIVALS</h2>
+          <Link to="/men">
+            <Button variant="outline" size="sm">View All</Button>
+          </Link>
         </div>
         <div className="overflow-x-auto scrollbar-hide">
           <div className="flex gap-4 md:gap-6 pb-4">
-            {/* Women's Products */}
-            {products.filter(p => p.gender === "women").slice(0, 6).map((product) => (
-              <Link key={product.id} to={`/product/${product.id}`} className="group flex-shrink-0 w-[140px] md:w-[180px]">
-                <div className="relative overflow-hidden bg-secondary/50 aspect-[3/4] rounded-lg">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="mt-2 space-y-1">
-                  <h3 className="font-serif text-xs md:text-sm font-medium group-hover:text-primary transition-smooth line-clamp-1">
-                    {product.name}
-                  </h3>
-                  <p className="text-xs text-muted-foreground line-clamp-1">{product.category}</p>
-                  <p className="text-sm md:text-base font-semibold">₹{product.price.toLocaleString()}</p>
-                </div>
-              </Link>
-            ))}
-            {/* Men's Products */}
             {products.filter(p => p.gender === "men").slice(0, 6).map((product) => (
               <Link key={product.id} to={`/product/${product.id}`} className="group flex-shrink-0 w-[140px] md:w-[180px]">
                 <div className="relative overflow-hidden bg-secondary/50 aspect-[3/4] rounded-lg">
